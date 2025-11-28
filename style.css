@@ -1,0 +1,105 @@
+/* ========= FONDO GENERAL ESTILO DBZ ========= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+    /* Fondo dinámico inspirado en auras de energía */
+    background: radial-gradient(circle at center,
+        #1a1d2e 0%,
+        #0b0d18 40%,
+        #000000 100%);
+    color: #fff;
+}
+
+/* ========= LOGO ========= */
+.logo-container {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.logo {
+    width: 110px;
+    filter: drop-shadow(0 0 12px #fbbf24);
+}
+
+/* ========= CONTENEDOR PRINCIPAL ========= */
+.lista {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+
+    /* Sombra tipo aura */
+    box-shadow: 0 0 25px rgba(255, 141, 0, 0.5),
+                inset 0 0 30px rgba(0, 157, 255, 0.25);
+}
+
+/* ========= TÍTULO ========= */
+.lista h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+
+    /* efecto brillante */
+    color: #fbbf24;
+    text-shadow: 0 0 10px #ff8c00, 0 0 25px #ffcf33;
+}
+
+/* ========= LISTA ========= */
+.hover-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hover-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px 20px;
+    margin-bottom: 14px;
+
+    border-radius: 14px;
+
+    transition: transform 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
+    cursor: pointer;
+
+    /* borde brillante leve */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ========= ICONOS ========= */
+.icon {
+    font-size: 26px;
+    color: #38bdf8; /* Azul estilo Ki */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* ========= EFECTO HOVER SUPER SAIYAJIN ========= */
+.hover-list li:hover {
+    transform: translateX(12px);
+
+    /* aura amarilla de super saiyajin */
+    background: rgba(255, 178, 36, 0.25);
+    box-shadow: 0 0 18px #ffb224aa;
+}
+
+.hover-list li:hover .icon {
+    transform: rotate(18deg) scale(1.25);
+
+    /* Cambia a dorado (Super Saiyajin) */
+    color: #ffe45e;
+}
+
+/* ========= TEXTO ========= */
+.hover-list span {
+    font-size: 16px;
+    line-height: 1.45;
+}
