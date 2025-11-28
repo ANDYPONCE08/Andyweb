@@ -1,0 +1,118 @@
+/* --------- RESET / BODY --------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+body {
+  font-family: 'Orbitron', system-ui, sans-serif;
+  background: url('fondo.jpg') center/cover no-repeat fixed; /* <-- coloca tu imagen aquí */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6fff7;
+}
+
+/* capa para oscurecer y dar contraste al fondo */
+.hero { position: relative; width: 100%; height: 100vh; display:flex; align-items:center; justify-content:center; }
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,8,20,0.6), rgba(5,8,20,0.75));
+  pointer-events: none;
+}
+
+/* contenedor central */
+.contenedor {
+  position: relative;
+  z-index: 3;
+  width: min(880px, 92%);
+  max-width: 920px;
+  display: grid;
+  place-items: center;
+  gap: 18px;
+  padding: 48px;
+}
+
+/* anillos de neón (decorativos) */
+.neon-ring {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.ring-outer {
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle at 30% 30%, rgba(0,255,220,0.14), transparent 25%),
+              conic-gradient(from 120deg, rgba(255,0,150,0.08), rgba(0,200,255,0.05));
+  transform: rotate(10deg);
+}
+.ring-inner {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle at 70% 40%, rgba(255,30,150,0.08), transparent 18%),
+              conic-gradient(from 200deg, rgba(0,255,220,0.06), rgba(255,100,200,0.03));
+}
+
+/* tarjeta de vidrio (glassmorphism) */
+.glass {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  padding: 36px 30px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px) saturate(130%);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  text-align: center;
+}
+
+/* reloj: estilo digital neón */
+.reloj {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(36px, 8vw, 96px);
+  color: #b8fff0;
+  letter-spacing: 6px;
+  font-weight: 700;
+  text-shadow:
+    0 0 6px rgba(184,255,240,0.6),
+    0 0 18px rgba(0,255,220,0.15),
+    0 6px 30px rgba(0,0,0,0.6);
+}
+
+/* número con fondo sutil y contorno */
+.reloj span {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* separador animado (los dos puntos) */
+.sep {
+  font-weight: 900;
+  transform: translateY(-4px);
+  transition: opacity .15s linear;
+  color: #ff86c8;
+  text-shadow: 0 0 8px rgba(255,134,200,0.5);
+}
+
+/* etiqueta inferior */
+.label {
+  margin-top: 10px;
+  color: rgba(230,255,247,0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: .85;
+}
+
+/* responsivo */
+@media (max-width: 520px) {
+  .contenedor { padding: 22px; }
+  .glass { padding: 18px; border-radius: 14px; }
+  .reloj { letter-spacing: 3px; }
+}
